@@ -1,0 +1,23 @@
+{
+  "name": "fsgroup/webhocngoaingu",
+  "description": "Final project for web development course - Foreign Language Learning Website",
+  "type": "project",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "DungDepTrai",
+      "email": "contact@dungdeptrai.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "league/oauth2-facebook": "^2.2",
+    "orhanerday/open-ai": "^4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}

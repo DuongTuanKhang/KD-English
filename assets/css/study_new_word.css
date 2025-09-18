@@ -1,0 +1,347 @@
+/* header */
+
+.header {
+  position: sticky;
+  top: 0px;
+  z-index: 99;
+  background-color: var(--main-color);
+}
+
+.header_wrap {
+  color: var(--white-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.header__name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__statr {
+  font-size: 1.8rem;
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+/* container */
+
+.container {
+  height: calc(100vh - (var(--header-height) + 18px));
+  margin-top: 18px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.targer-bar {
+  width: 100%;
+  height: 18px;
+  background: var(--background-bar-color);
+  border-radius: 15px;
+  margin-top: 14px;
+  position: relative;
+}
+
+/* percent */
+
+.targer-bar-value {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-radius: 15px;
+  background-color: var(--green-color);
+}
+
+.warp-introduce {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.introduce__new {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.warp-introduce__ponit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introcduce__point-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-left: 6px;
+}
+
+.conjunction {
+  display: flex;
+  gap: 10px;
+}
+
+.new-words {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-words__heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.new-words__heading-sub {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.new-words__wrap-img {
+  width: 300px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--grey-plus-1-color);
+  box-shadow: 0 3px 2px var(--grey-plus-1-color);
+  border-radius: 15px;
+}
+
+.new-words__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 147px;
+  max-width: 147px;
+}
+
+.new-words_container {
+  display: flex;
+  gap: 10px;
+}
+
+.new-words__btn {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 35px;
+  border: 2px solid var(--grey-plus-1-color);
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.new-words__btn:active {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
+.example {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 24px 0 16px 0;
+}
+
+.example-container {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.example-for-new-words {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.example-for-new-words-sub {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.continue__btn {
+  position: absolute;
+  bottom: -90px;
+  right: 0;
+}
+
+.vocabulary-review {
+  position: absolute;
+  right: 0;
+  top: 42%;
+  width: 84px;
+  height: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  border-bottom: 7px solid #c6c6c6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.vocabulary-review:active {
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+
+.vocabulary-review__img {
+  width: 40px;
+  height: 38px;
+}
+
+/* Word Type and Pronunciation Styles */
+.word-type,
+.pronunciation {
+  margin: 8px 0;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-left: 4px solid #007bff;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #495057;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.word-type:hover,
+.pronunciation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+}
+
+.word-type {
+  border-left-color: #28a745;
+  background: linear-gradient(135deg, #f8fff9 0%, #e8f5e8 100%);
+}
+
+.pronunciation {
+  border-left-color: #17a2b8;
+  background: linear-gradient(135deg, #f0fffe 0%, #e1f7fa 100%);
+  margin-bottom: 16px;
+}
+
+.word-type-value,
+.pronunciation-value {
+  font-weight: 700;
+  color: #212529;
+  margin-left: 8px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  font-family: "Noto Sans", sans-serif;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.word-type-value:hover,
+.pronunciation-value:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.05);
+}
+
+.word-type-value {
+  color: #28a745;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.pronunciation-value {
+  color: #17a2b8;
+  font-style: italic;
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-family: "Courier New", "Noto Sans", monospace;
+}
+
+/* Animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .word-type,
+  .pronunciation {
+    font-size: 1.2rem;
+    padding: 6px 12px;
+    margin: 6px 0;
+  }
+
+  .word-type-value,
+  .pronunciation-value {
+    font-size: 1.1rem;
+    padding: 3px 8px;
+  }
+}
+
+/* Example Section Styles */
+.example {
+  margin: 12px 0 8px 0;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #fff8e1 0%, #fff3c4 100%);
+  border-left: 4px solid #ff9800;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e65100;
+  box-shadow: 0 2px 6px rgba(255, 152, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.example:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(255, 152, 0, 0.3);
+}
+
+.example::before {
+  content: "📝";
+  margin-right: 8px;
+  font-size: 1.4rem;
+}

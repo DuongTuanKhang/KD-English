@@ -1,0 +1,865 @@
+/* Reset và Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.col-12 {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Writing Styles - Modern & Beautiful */
+.writing-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 40px 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Full screen override for my-writing page */
+body.my-writing-page .writing-container,
+.container-fluid .writing-container {
+  padding: 30px;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.writing-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(120, 119, 198, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 119, 198, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(120, 219, 255, 0.3) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.writing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.writing-title {
+  font-size: 42px;
+  font-weight: 900;
+  color: white;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+}
+
+.writing-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.gap-3 {
+  gap: 15px;
+}
+
+/* Writing Topics Grid - Enhanced */
+.writing-topics-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  margin-bottom: 40px;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .writing-topics-grid {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .writing-topic-card {
+    padding: 30px 20px;
+  }
+
+  .writing-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .writing-title {
+    font-size: 32px;
+  }
+
+  .writing-container {
+    padding: 20px 10px;
+  }
+}
+
+.writing-topic-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 40px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.writing-topic-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+}
+
+.writing-topic-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.writing-topic-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.writing-topic-card:hover::after {
+  opacity: 1;
+  top: -100%;
+  right: -100%;
+}
+
+.writing-topic-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.writing-topic-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.writing-topic-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Writing Prompts List - Enhanced */
+.writing-prompts-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 32px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.writing-prompts-container.hidden {
+  display: none !important;
+}
+
+#promptsList {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 25px;
+}
+
+.writing-prompt-item {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.writing-prompt-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.writing-prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.writing-prompt-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  flex: 1;
+}
+
+.writing-prompt-level {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.level-easy {
+  background: rgba(46, 204, 113, 0.3);
+  color: #27ae60;
+  border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.level-medium {
+  background: rgba(243, 156, 18, 0.3);
+  color: #f39c12;
+  border: 1px solid rgba(243, 156, 18, 0.4);
+}
+
+.level-hard {
+  background: rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.4);
+}
+
+.writing-prompt-content {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.writing-prompt-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.writing-prompt-meta-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.writing-prompt-wordcount {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.writing-prompt-time {
+  background: rgba(52, 152, 219, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.writing-prompt-time i {
+  font-size: 10px;
+}
+
+.writing-prompt-meta-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+/* Writing Form */
+.writing-form-container {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.alert {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  border-color: #ffeaa7;
+  color: #856404;
+}
+
+.writing-form-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.writing-form-group {
+  margin-bottom: 20px;
+}
+
+.writing-form-label {
+  display: block;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.writing-form-input,
+.writing-form-select,
+.writing-form-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e8f4fd;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.writing-form-input:focus,
+.writing-form-select:focus,
+.writing-form-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.writing-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.writing-essay-textarea {
+  min-height: 300px;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.6;
+}
+
+/* Word Counter */
+.word-counter {
+  text-align: right;
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+.word-counter.warning {
+  color: #f39c12;
+}
+
+.word-counter.error {
+  color: #e74c3c;
+}
+
+/* Buttons - Simple & Clean */
+.writing-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  backdrop-filter: blur(5px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.writing-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  color: white;
+  text-decoration: none;
+}
+
+.writing-btn-success {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.writing-btn-success:hover {
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
+}
+
+.writing-btn-danger {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.writing-btn-danger:hover {
+  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+}
+
+.writing-btn-secondary {
+  background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+}
+
+.writing-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+/* Modal Styles for Writing */
+.writing-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.writing-modal.active {
+  display: flex !important;
+}
+
+.writing-modal-content {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.writing-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #95a5a6;
+  background: none;
+  border: none;
+}
+
+.writing-modal-close:hover {
+  color: #e74c3c;
+}
+
+/* Submission Status */
+.submission-status {
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.status-submitted {
+  background: linear-gradient(135deg, #d5f4e6 0%, #a8e6cf 100%);
+  color: #27ae60;
+  border: 2px solid #27ae60;
+}
+
+.status-graded {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
+}
+
+.status-ungraded {
+  background: linear-gradient(135deg, #fef9e7 0%, #fff3cd 100%);
+  color: #f57c00;
+  border: 2px solid #f57c00;
+}
+
+/* Enhanced submission date styling */
+.submission-status .mt-2 {
+  margin-top: 15px !important;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Score Display */
+.score-container {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.score-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.score-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 15px;
+}
+
+.score-value {
+  font-weight: 700;
+  color: #28a745;
+  font-size: 16px;
+}
+
+/* Enhanced prompt meta display */
+.writing-prompt-meta {
+  margin-bottom: 15px;
+}
+
+.writing-prompt-meta div {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.writing-prompt-meta strong {
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Comments */
+.comment-section {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.comment-title {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 15px;
+}
+
+.comment-content {
+  line-height: 1.6;
+  color: #6c757d;
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+  #promptsList {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  #promptsList {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #promptsList {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+
+  .writing-prompts-container {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .writing-topics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #promptsList {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .writing-prompts-container {
+    padding: 16px;
+  }
+
+  .writing-prompt-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .writing-prompt-meta-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Mobile optimizations for submission status */
+  .submission-status {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .submission-status .mt-2 {
+    margin-top: 12px !important;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+
+  .writing-prompt-meta div {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .score-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding-bottom: 12px;
+  }
+
+  .score-label,
+  .score-value {
+    font-size: 14px;
+  }
+} /* Loading States */
+.writing-loading {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+}
+
+.writing-loading i {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Empty States */
+.writing-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #95a5a6;
+}
+
+.writing-empty i {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.writing-empty h3 {
+  margin-bottom: 10px;
+  color: #7f8c8d;
+}
+
+/* Button Styles for Different States */
+.writing-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.writing-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.writing-btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.writing-btn-success:hover {
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+  color: white;
+}
+
+.writing-btn-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.writing-btn-warning:hover {
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+  color: white;
+}
+
+.writing-btn-secondary {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.writing-btn-secondary:hover {
+  box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+  color: white;
+}
+
+/* Force reload */
+.test {
+  color: red;
+}

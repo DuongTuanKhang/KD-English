@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>K&D English Scrabble Game • Player vs AI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>K&D English Scrabble Game • Player vs AI</span>
+      </div>
+
+      <div class="badges">
+        <div class="score-badge">You <span id="p1Score">0</span></div>
+        <div class="score-badge alt">AI <span id="p2Score">0</span></div>
+        <div class="turn" id="turnIndicator">Your Turn</div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="board-wrap">
+        <div class="legend">
+          <span class="pill tw">TW</span><span>Triple Word</span>
+          <span class="pill dw">DW</span><span>Double Word</span>
+          <span class="pill tl">TL</span><span>Triple Letter</span>
+          <span class="pill dl">DL</span><span>Double Letter</span>
+        </div>
+
+        <div id="board" class="board" aria-label="Scrabble Board"></div>
+
+        <div id="message" class="message"></div>
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <div class="card-title">Rack</div>
+          <div id="rack" class="rack" aria-label="Rack"></div>
+
+          <div class="btns">
+            <button id="btnRecall" class="btn ghost">Recall</button>
+            <button id="btnShuffle" class="btn ghost">Shuffle</button>
+            <button id="btnSwap" class="btn ghost">Swap</button>
+          </div>
+
+          <div class="btns">
+            <button id="btnNew" class="btn">New Game</button>
+            <button id="btnSubmit" class="btn primary">Submit</button>
+          </div>
+
+          <div class="meta">
+            <div>Bag: <span id="bagCount">0</span> tiles left</div>
+            <div>Last score: <span id="lastScore">0</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Turn History</div>
+          <div id="history" class="history"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Dictionary (optional)</div>
+          <input
+            id="dictQuery"
+            class="input"
+            placeholder="Find word in mini list..."
+          />
+          <div id="dictResult" class="dict-result"></div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
