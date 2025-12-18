@@ -471,6 +471,17 @@ if ($khoaHoc && is_array($khoaHoc)) {
                                         <div class="modal-study__choose-function-text">Grammar</div>
                                     </div>
                                 </div>
+                                
+                                <div class="col l-6">
+                                    <div class="modal-study__choose-function-wrap">
+                                        <a href="<?= BASE_URL("Speaking?maKhoaHoc=" . $_GET['maKhoaHoc'] . "&maBaiHoc=" . $_GET['maBaiHoc']) ?>" class="modal-study__choose-function-btn-link">
+                                            <div class="modal-study__choose-function-btn modal-study__choose-function-btn--8">
+                                                <i class="fas fa-microphone"></i>
+                                            </div>
+                                        </a>
+                                        <div class="modal-study__choose-function-text">Speaking</div>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>

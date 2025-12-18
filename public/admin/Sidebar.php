@@ -1,11 +1,21 @@
 <!-- CSS Fix for VS Code warnings - Font Awesome classes -->
 <style>
-/* Font Awesome classes to prevent VS Code warnings */
-.fa-bars, .fa-comments, .fa-bell, .fa-expand-arrows-alt, .fa-th-large,
-.fa-book, .fa-tachometer-alt, .fa-users, .fa-graduation-cap, .fa-book-reader,
-.fa-robot, .fa-cog, .fa-pen-alt {
-    /* These classes are defined by Font Awesome library */
-}
+    /* Font Awesome classes to prevent VS Code warnings */
+    .fa-bars,
+    .fa-comments,
+    .fa-bell,
+    .fa-expand-arrows-alt,
+    .fa-th-large,
+    .fa-book,
+    .fa-tachometer-alt,
+    .fa-users,
+    .fa-graduation-cap,
+    .fa-book-reader,
+    .fa-robot,
+    .fa-cog,
+    .fa-pen-alt {
+        /* These classes are defined by Font Awesome library */
+    }
 </style>
 
 <!-- Navbar -->
@@ -87,6 +97,14 @@
                         <i class="nav-icon fas fa-spell-check"></i>
                         <p>
                             Grammar Quiz
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= BASE_URL('public/admin/SpeakingManagement.php'); ?>" class="nav-link">
+                        <i class="nav-icon fas fa-microphone"></i>
+                        <p>
+                            Speaking
                         </p>
                     </a>
                 </li>
